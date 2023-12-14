@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<img src="https://th.bing.com/th/id/R.f67ebc491f734d57411cd8264aa49273?rik=yjoFy1kOe21nNw&riu=http%3a%2f%2fwww.clker.com%2fcliparts%2f8%2f9%2f3%2f4%2f14985547951283004296zodiac-birth-dates.hi.png&ehk=uAbOyveyW%2fFyDcVqMHK5eXsCFrswHlQGLciOTC93s44%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
+
+<script>
+    function getAstrologicalSign(userDOB) {
+      const birthMonth = userDOB.getMonth() + 1;
+      const birthDay = userDOB.getDate();
+
+      let astrologicalSign = "";
+      
+      // Determine the astrological sign based on the birth month and day
+      if ((birthMonth === 1 && birthDay >= 20) || (birthMonth === 2 && birthDay <= 18)) {
+        astrologicalSign = "Aquarius ♒️";
+      } else if ((birthMonth === 2 && birthDay >= 19) || (birthMonth === 3 && birthDay <= 20)) {
+        astrologicalSign = "Pisces ♓️";
+      } else if ((birthMonth === 3 && birthDay >= 21) || (birthMonth === 4 && birthDay <= 19)) {
+        astrologicalSign = "Aries ♈️";
+      } else if ((birthMonth === 4 && birthDay >= 20) || (birthMonth === 5 && birthDay <= 20)) {
+        astrologicalSign = "Taurus ♉️";
+      } else if ((birthMonth === 5 && birthDay >= 21) || (birthMonth === 6 && birthDay <= 20)) {
+        astrologicalSign = "Gemini ♊️";
+      } else if ((birthMonth === 6 && birthDay >= 21) || (birthMonth === 7 && birthDay <= 22)) {
+        astrologicalSign = "Cancer ♋️";
+      } else if ((birthMonth === 7 && birthDay >= 23) || (birthMonth === 8 && birthDay <= 22)) {
+        astrologicalSign = "Leo ♌️";
+      } else if ((birthMonth === 8 && birthDay >= 23) || (birthMonth === 9 && birthDay <= 22)) {
+        astrologicalSign = "Virgo ♍️";
+      } else if ((birthMonth === 9 && birthDay >= 23) || (birthMonth === 10 && birthDay <= 22)) {
+        astrologicalSign = "Libra ♎️";
+      } else if ((birthMonth === 10 && birthDay >= 23) || (birthMonth === 11 && birthDay <= 21)) {
+        astrologicalSign = "Scorpio ♏️";
+      } else if ((birthMonth === 11 && birthDay >= 22) || (birthMonth === 12 && birthDay <= 21)) {
+        astrologicalSign = "Sagittarius ♐️";
+      } else {
+        astrologicalSign = "Capricorn ♑️";
+      }
+      
+      return astrologicalSign;
+    }
+
+    // Function to prompt the user for their date of birth
+    function getUserDOB() {
+      let birthYear = prompt("What year were you born?");
+      let birthMonth = prompt("In which month were you born? (Enter a number from 1 to 12)");
+      let birthDay = prompt("On which day of the month were you born?");
+      
+      // Create a Date object using the user's input
+      let userDOB = new Date(`${birthYear}-${birthMonth}-${birthDay}`);
+      
+      // Determine the astrological sign
+      let astrologicalSign = getAstrologicalSign(userDOB);
+      
+       // Output the user's date of birth and astrological sign
+      alert(`Your date of birth is: ${userDOB.toDateString()}\nYour astrological sign is: ${astrologicalSign}`);
+    }
+
+    // Call the function to get the user's date of birth and astrological sign
+    getUserDOB();
+</script>
+
+</body>
+</html>
